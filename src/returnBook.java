@@ -164,7 +164,7 @@ public class returnBook extends javax.swing.JFrame {
         try{
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
-            st.executeQuery("update issue set returnBook = 'YES' where studentId = " + studentID+" and bookID="+bookID );
+            st.executeUpdate("update issue set returnBook = 'YES' where studentId = " + studentID+" and bookID="+bookID );
             JOptionPane.showMessageDialog(null,"Book successfully returned");
             setVisible(false);
             new returnBook().setVisible(true);
